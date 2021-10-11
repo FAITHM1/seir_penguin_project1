@@ -31,3 +31,10 @@ It was a giving me a problem... when it was fixed it looked like thus
 ```js
 console.log("bye");
 ```
+
+#### Example table
+
+| column1 | colum2  |
+| ------- | ------- |
+| thing 1 | thing 2 |
+| yadda 1 | yadda 2 |
