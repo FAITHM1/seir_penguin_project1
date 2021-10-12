@@ -4,7 +4,7 @@
 
 ## introduction
 
-Explain what is your projext is here
+Explain what is your project is here
 
 ## Technologies used
 
