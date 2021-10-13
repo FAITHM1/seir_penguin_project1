@@ -12,26 +12,23 @@
       crossorigin="anonymous"
     ></script>
     <script src="app.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
-  <body>
+  <div class="container">
     <div class="row logo">
-      <h1>My js Trivia game</h1>
-      <img src="./img/output-onlinepngtools.png" alt="" />
+      <img src="./img/output-onlinepngtools (2).png" alt="" />
+      <h1>Random facts!</h1>
+      <div class="background"></div>
     </div>
-
-    <div id="question">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
-      consequatur!
-    </div>
-    <div id="answer">
-      <button id="a">a</button>
-      <button id="b">b</button>
-      <button id="c">c</button>
-      <button id="d">d</button>
-    </div>
-    <div id="correctAns">and the ans is</div>
-    <div id="scores">
+    <div class="row" id="scores">
       <div id="player1">
         <h3>player 1</h3>
         <h4>0</h4>
@@ -41,5 +38,21 @@
         <h4>0</h4>
       </div>
     </div>
+    <div class="row ans">
+      <div id="question">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+          consequatur!
+        </p>
+      </div>
+      <div id="answer">
+        <button id="a">a</button>
+        <button id="b">b</button>
+        <button id="c">c</button>
+        <button id="d">d</button>
+      </div>
+    </div>
+    <!-- <div id="correctAns">and the ans is</div> -->
+  </div>
   </body>
 </html>

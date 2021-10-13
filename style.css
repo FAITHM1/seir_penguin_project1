@@ -1,3 +1,127 @@
-* {
+/* * {
   outline: 2px red solid;
+} */
+body {
+  background-color: rgba(214, 200, 252, 0.253);
+}
+.container {
+  margin-top: 50px;
+}
+.row {
+  display: flex;
+  margin: 30px;
+
+  justify-content: center;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(
+    rgb(251, 218, 253),
+    rgba(254, 241, 255, 0.253)
+  );
+  border-radius: 15px;
+  /* border-bottom: 2px solid blue; */
+}
+.logo img {
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  animation: rotating-logo;
+  animation-duration: 1s;
+}
+
+.logo h1 {
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  bottom: 100px;
+
+  color: rgb(113, 99, 212);
+  text-shadow: 5px 5px 2px rgb(247, 157, 250);
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+/* questions */
+.ans {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  border-radius: 10px;
+  background: linear-gradient(
+    rgba(254, 246, 255, 0.253),
+    rgba(251, 218, 253, 0.753)
+  );
+}
+#question {
+  text-align: center;
+  font-size: 20px;
+  padding: 40px;
+  color: rgb(153, 146, 212);
+  font-family: "Alfa Slab One", cursive;
+}
+#answer {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#answer button {
+  color: rgb(112, 107, 194);
+  font-size: 15px;
+  width: 40%;
+  height: 30px;
+  margin: 30px;
+  border-radius: 4%;
+  border: 1px solid black;
+  font-family: "Alfa Slab One", cursive;
+  letter-spacing: 2px;
+}
+#scores {
+  justify-content: space-around;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  height: 50px;
+  background-color: white;
+  font-size: 10px;
+  padding: 2px;
+  padding-bottom: 10px;
+  border-radius: 12%;
+  font-family: "Merriweather Sans";
+  background: linear-gradient(
+    rgba(251, 218, 253, 0.753),
+    rgba(254, 246, 255, 0.253),
+    rgba(251, 218, 253, 0.753)
+  );
+  box-shadow: 5px 5px 8px #f8e2fc;
+}
+/* media qureies */
+@media (min-width: 320px) and (max-width: 670px) {
+  #answer {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  #answer button {
+    margin-top: 0;
+    height: 20px;
+    font-size: 10px;
+    width: 50%;
+  }
+}
+
+/* keyframes */
+@keyframes rotating-logo {
+  0% {
+    transform: rotate(90deg) scale(0.5) translate(-20, -20);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1) translate(0, 0);
+  }
 }
