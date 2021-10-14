@@ -16,8 +16,7 @@ const $correct = $("#correctAns");
 const $p1score = $("#player1 h4");
 const $p2score = $("#player2 h4");
 const $window = window;
-const $player1Input = $("input[type=text]#player1-input").val();
-const $player2Input = $("input[type=text]#player2-input").val();
+
 //functions
 
 const chooseANS = (event, question) => {
@@ -60,24 +59,28 @@ const chooseANS = (event, question) => {
   }
 };
 
-const storage = () => {
-  localStorage.setItem($(".player1"), state.player1);
-};
+// const storage = () => {
+//   localStorage.setItem($(".player1"), state.player1);
+// };
 // name input and adds it to the body
 $("input[type=submit]").on("click", (event) => {
   event.preventDefault();
+  const $player1Input = $("#player1-input").val();
   $("#player1 h3").text($player1Input);
-
   ///player two
+  const $player2Input = $("#player2-input").val();
   $("#player2 h3").text($player2Input);
   $(".input-container").hide("fast");
 
-  $(".reset").on("click", () => {
+  $(".reset").on("click", (event) => {
+    event.preventDefault();
     state.player1 = 0;
     state.player2 = 0;
-    $("#player1 h3").text("");
-    $("#player2 h3").text("");
+    $("#player1").text("");
+    $("#player2").text("");
     $(".input-container").show();
+    $("#player2-input").val("");
+    $("#player1-input").val("");
     setBoard(questions);
   });
 });

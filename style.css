@@ -28,7 +28,7 @@ body {
   border-radius: 2%;
   border: 1px solid rgb(223, 205, 205);
 }
-input[type="submit"] {
+.subhover {
   margin-top: 1px;
   border: 1px solid rgba(122, 101, 124, 0.671);
   box-shadow: 0px 3px 8px #8f7394;
