@@ -73,11 +73,11 @@ $("input[type=submit]").on("click", (event) => {
   $(".input-container").hide("fast");
 
   $(".reset").on("click", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     state.player1 = 0;
     state.player2 = 0;
-    $("#player1").text("");
-    $("#player2").text("");
+    $("#player1 h3").text("");
+    $("#player2 h3").text("");
     $(".input-container").show();
     $("#player2-input").val("");
     $("#player1-input").val("");
@@ -85,7 +85,7 @@ $("input[type=submit]").on("click", (event) => {
   });
 });
 
-$("input[value=defalut").on("click", () => {
+$("input[value=defalut]").on("click", () => {
   $("#player1 h3").text("Player 1");
   $("#player2 h3").text("Player 2");
 });
