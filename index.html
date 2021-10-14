@@ -20,24 +20,53 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a2310eeb25.js" crossorigin="anonymous"></script>
+    <title>Triva</title>
   </head>
+  <div class="row input-container">
+    <div class="input-div"> 
+    <P>Enter a username </P>
+    
+    <div class="name">
+      <input type="text" id="player1-input" class="input" placeholder="player one..."/>
+      <input type="text" id="player2-input" placeholder="player two..." class="input"/>
+      <input type="submit" class="subhover">
+      <p>or</p>
+      <input type="submit" value="defalut" class="defalut subhover"/>
+    </div>
+    </div>
+  </div>
+  <!-- <div class="nav">
+   <i class="fas fa-bars nav-btn" ></i>
+    <div class="nav-items">
+      <p class="leader">past winners</p>
+      <div id="player-container">
+      <h4 class="player1"></h4>
+      <h4 class="player2"></h4>
+    </div>
+ </div>
+  </div> -->
   <div class="container">
+
     <div class="row logo">
       <img src="./img/output-onlinepngtools (2).png" alt="" />
-      <h1>Random facts!</h1>
+      <h1>RandomFacts!</h1>
       <div class="background"></div>
     </div>
+    
+   <!-- <button class="row reset">Hint</button> -->
     <div class="row" id="scores">
       <div id="player1">
-        <h3>player 1</h3>
+        <h3></h3>
         <h4>0</h4>
       </div>
       <div id="player2">
-        <h3>Player 2</h3>
+        <h3></h3>
         <h4>0</h4>
       </div>
+      
     </div>
+    <button class="row reset">reset</button>
     <div class="row ans">
       <div id="question">
         <p>
@@ -52,7 +81,7 @@
         <button id="d">d</button>
       </div>
     </div>
-    <!-- <div id="correctAns">and the ans is</div> -->
+    <div id="correctAns">and the ans is</div>
   </div>
   </body>
 </html>
