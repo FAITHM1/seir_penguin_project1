@@ -28,12 +28,13 @@ body {
   border-radius: 2%;
   border: 1px solid rgb(223, 205, 205);
 }
-.subhover {
+input[type="submit"] {
   margin-top: 1px;
   border: 1px solid rgba(122, 101, 124, 0.671);
   box-shadow: 0px 3px 8px #8f7394;
   color: rgb(81, 77, 110);
   border-radius: 1px;
+  background-color: rgb(255, 243, 243);
 }
 
 .input-div {
