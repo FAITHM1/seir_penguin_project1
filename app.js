@@ -57,7 +57,7 @@ const chooseANS = (event, question) => {
     setBoard(questions);
   }
 
-  if (state.player1 === 1) {
+  if (state.player1 === 10) {
     $(".wincon").css("display", "block");
     $("#player1 h3").clone().appendTo(".winner p");
   } else if (state.player2 === 10) {
