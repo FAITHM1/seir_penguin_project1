@@ -34,7 +34,7 @@ $("#player1 h3").clone().appendTo(".winner p");
 
 #### I had trouble with
 
-getting the color to change when its clicked on.
+getting the color to change when the answer is wrong and when its right.
 
 I dont have a sinppet of the code
 
