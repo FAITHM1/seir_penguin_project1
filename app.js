@@ -17,23 +17,30 @@ const $p1score = $("#player1 h4");
 const $p2score = $("#player2 h4");
 const $window = window;
 
+///test
+if (state.which === true) {
+  state.which = $("#player2");
+} else if (state.which === false) {
+  $("#player2").css("border-bottom", "1px solid red");
+  state.which === !state.which;
+}
+
 //functions
+// name input and adds it to the body
+const playersName = () => {
+  const $player1Input = $("#player1-input").val();
+  $("#player1 h3").text($player1Input);
+  ///player two
+  const $player2Input = $("#player2-input").val();
+  $("#player2 h3").text($player2Input);
+};
 
 const chooseANS = (event, question) => {
   // console.log(event);
-
   if (
     event.currentTarget.innerText.toLowerCase() ===
     question.answer.toLowerCase()
   ) {
-    // console.log(
-    //   event.target,
-    //   event.currentTarget,
-    //   "correct",
-    //   question.answer.toLowerCase(),
-    //   event.target.innerText.toLowerCase()
-    // );
-    // event.stopPropagation();
     if (state.which) {
       event.stopPropagation();
       state.player1++;
@@ -46,42 +53,50 @@ const chooseANS = (event, question) => {
       setBoard(questions);
     }
   } else {
-    // console.log(
-    //   event.target,
-    //   event.currentTarget,
-
-    //   state.which,
-    //   question.answer.toLowerCase(),
-    //   event.target.innerText.toLowerCase()
-    // );
     state.which = !state.which;
     setBoard(questions);
   }
+
+  if (state.player1 === 1) {
+    $(".wincon").css("display", "block");
+    $("#player1 h3").clone().appendTo(".winner p");
+  } else if (state.player2 === 10) {
+    $(".wincon").css("display", "block");
+    $("#player2 h3").clone().appendTo(".winner p");
+  }
+  $("#reset").on("click", (event) => {
+    state.player1 = 0;
+    state.player2 = 0;
+    $(".wincon").css("display", "none");
+    $("#player1 h3").text("");
+    $("#player2 h3").text("");
+    $("#player2-input").val("");
+    $("#player1-input").val("");
+    $(".input-container").show();
+    setBoard(questions);
+  });
 };
 
-// const storage = () => {
-//   localStorage.setItem($(".player1"), state.player1);
-// };
-// name input and adds it to the body
+// reset function
+const reset = () => {
+  state.player1 = 0;
+  state.player2 = 0;
+  $("#player1 h3").text("");
+  $("#player2 h3").text("");
+  $(".input-container").show();
+  $("#player2-input").val("");
+  $("#player1-input").val("");
+  setBoard(questions);
+};
+//win
 $("input[type=submit]").on("click", (event) => {
   event.preventDefault();
-  const $player1Input = $("#player1-input").val();
-  $("#player1 h3").text($player1Input);
-  ///player two
-  const $player2Input = $("#player2-input").val();
-  $("#player2 h3").text($player2Input);
+  playersName();
   $(".input-container").hide("fast");
 
   $(".reset").on("click", (event) => {
     // event.preventDefault();
-    state.player1 = 0;
-    state.player2 = 0;
-    $("#player1 h3").text("");
-    $("#player2 h3").text("");
-    $(".input-container").show();
-    $("#player2-input").val("");
-    $("#player1-input").val("");
-    setBoard(questions);
+    reset();
   });
 });
 
@@ -89,6 +104,7 @@ $("input[value=defalut]").on("click", () => {
   $("#player1 h3").text("Player 1");
   $("#player2 h3").text("Player 2");
 });
+
 const setBoard = (q) => {
   //getting a random question
   const randomIndex = Math.floor(Math.random() * q.length);
@@ -108,6 +124,7 @@ const setBoard = (q) => {
   $("#answer button").on("click", (event) => {
     event.preventDefault();
     chooseANS(event, randomQuestion);
+    // if(event.currentTarget.innerText===)
   });
   // if (state.player1 === 10 && state.player2 < ) {
 
@@ -124,7 +141,7 @@ $.ajax(url).then((data) => {
 
   setBoard(questions);
   $(window).on("keypress", (target, key) => {
-    if (target.key === "k") {
+    if (target.key === "k" || target.key === "K") {
       $("#correctAns").css("display", "block");
     }
   });

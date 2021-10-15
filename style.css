@@ -1,3 +1,6 @@
+/* * {
+  outline: 1px solid red;
+} */
 body {
   background-color: rgba(214, 200, 252, 0.253);
 }
@@ -17,19 +20,20 @@ body {
 /* input page */
 .input-container {
   margin: 0;
-  padding: 1px;
-  position: fixed;
-  top: 5px;
-  right: 0;
-  height: 140px;
-  width: 40%;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  background-color: rgba(188, 143, 143, 0.082);
-  border-radius: 2%;
-  border: 1px solid rgb(223, 205, 205);
+  background-color: rgba(216, 216, 216, 0.692);
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 1;
+  justify-content: center;
 }
+
 .subhover {
-  margin-top: 1px;
+  margin: 4px;
   border: 1px solid rgba(122, 101, 124, 0.671);
   box-shadow: 0px 3px 8px #8f7394;
   color: rgb(81, 77, 110);
@@ -38,16 +42,23 @@ body {
 }
 
 .input-div {
-  background-color: rgba(178, 139, 194, 0.336);
-  padding: 5px;
-  font-size: 15px;
+  margin: auto auto;
+  background-color: rgba(178, 139, 194, 0.87);
+  padding: 10px;
+  height: 140px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   color: rgba(27, 23, 27, 0.74);
+  border: 2px solid rgb(253, 247, 247);
 }
 .input-div p {
-  margin-top: 5px;
-  margin-bottom: 0;
+  margin: 0px;
 }
-
+.name {
+  margin: 5px;
+}
 .input {
   width: 40%;
 }
@@ -61,7 +72,13 @@ body {
     rgb(251, 218, 253),
     rgba(254, 241, 255, 0.253)
   );
-  border-radius: 15px;
+  border: 3px solid rgba(123, 131, 247, 0.26);
+  border-bottom: none;
+  border-radius: 10px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin-top: 0;
+
   /* border-bottom: 2px solid blue; */
 }
 .logo img {
@@ -76,14 +93,16 @@ body {
 
 .logo h1 {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
   position: relative;
+  top: -40px;
   /* right: 70px; */
   bottom: 100px;
   color: rgb(113, 99, 212);
   text-shadow: 3px 3px 2px rgb(247, 157, 250);
   font-family: "Merriweather Sans", sans-serif;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
+  font-weight: 900;
 }
 
 /* questions */
@@ -96,6 +115,10 @@ body {
     rgba(254, 246, 255, 0.253),
     rgba(251, 218, 253, 0.753)
   );
+  border: 3px solid rgba(123, 131, 247, 0.185);
+  border-top: none;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
 }
 #question {
   text-align: center;
@@ -124,7 +147,8 @@ body {
 }
 #scores {
   justify-content: space-around;
-  width: 200px;
+  width: 250px;
+  height: 150px;
   text-align: center;
   margin: 0 auto;
   height: 50px;
@@ -142,8 +166,48 @@ body {
   box-shadow: 5px 5px 8px #f2d8f7;
   color: rgb(109, 105, 160);
 }
+#player1,
+#player2 {
+  background-color: rgba(250, 248, 248, 0.027);
+  width: 30%;
+  border-bottom: 1px solid rgba(48, 41, 85, 0.315);
+}
+.line {
+  margin: 10px;
+  margin-bottom: 0;
+  outline: 1px solid rgba(0, 0, 0, 0.247);
+}
+/* winner */
+.wincon {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.514);
+  position: fixed;
+  top: 0;
+  display: none;
+}
+.winner {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(161, 136, 194);
+  text-align: center;
+  width: 50%;
+  margin: 40% auto;
+  border: 2px solid rgba(139, 108, 211, 0.568);
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px black;
+}
+.winner h4,
+.winner p {
+  color: rgb(245, 245, 245);
+  font-size: 80%;
+}
+.winner p {
+  color: #29152c;
+}
 /* reset button */
-.reset {
+.reset,
+#reset {
   margin: 10px auto;
   border: 1px solid rgba(106, 87, 107, 0.671);
   box-shadow: 0px 6px 8px #8f7394;
@@ -174,6 +238,14 @@ button:hover {
     height: 20px;
     font-size: 10px;
     width: 50%;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+  }
+  .input-div {
+    position: relative;
+    right: 20px;
   }
 }
 
