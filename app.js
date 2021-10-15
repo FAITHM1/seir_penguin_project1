@@ -100,7 +100,7 @@ $("input[type=submit]").on("click", (event) => {
   });
 });
 
-$("input[value=defalut]").on("click", () => {
+$("input[value=default]").on("click", () => {
   $("#player1 h3").text("Player 1");
   $("#player2 h3").text("Player 2");
 });
